@@ -1,0 +1,75 @@
+{
+  "presets": ["next/babel"],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": true,
+            "displayName": true,
+            "preprocess": false
+          }
+        ]
+      ],
+      "presets": ["next/babel"]
+    },
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": true,
+            "displayName": true,
+            "preprocess": false
+          }
+        ]
+      ],
+      "presets": ["next/babel"]
+    },
+    "test": {
+      "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
+            "ssr": true,
+            "displayName": true,
+            "preprocess": false
+          }
+        ]
+      ],
+      "presets": [
+        ["next/babel", {
+          "preset-env": {
+            "modules": "commonjs"
+          }
+        }]
+      ]
+    }
+  },
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "modules": "./modules",
+          "components": "./components",
+          "utils": "./utils",
+          "theme": "./theme",
+          "constants": "./constants",
+          "services": "./services",
+          "store": "./store"
+        }
+      }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ]
+}
